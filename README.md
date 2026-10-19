@@ -1,4 +1,4 @@
-# UP01 — сервис доставки еды
+# Сервис доставки еды
 
 WPF-приложение на .NET Framework 4.8, SQL Server и Entity Framework 6 через ADO.NET Entity Data Model (EDMX). Контекст и классы сущностей модели входят в проект.
 
@@ -29,13 +29,6 @@ WPF-приложение на .NET Framework 4.8, SQL Server и Entity Framework
 | Курьер | `courier` | `courier123` |
 
 Это учебные демонстрационные данные. В базе пароли хранятся как PBKDF2-хеши, а не открытым текстом.
-
-## Запуск
-
-1. Открой `UP01_Andreev_423_FoodDelivery.sln` в Visual Studio 2022.
-2. Для первоначального создания БД выполни `db/schema.sql` в SQL Server Management Studio.
-3. Проверь строку подключения в `App.config`.
-4. Выполни **Build → Rebuild Solution**.
 
 ## Возможности
 

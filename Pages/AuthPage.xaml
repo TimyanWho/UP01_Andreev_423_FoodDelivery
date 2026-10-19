@@ -1,0 +1,55 @@
+﻿<Page x:Class="UP01_Andreev_423_FoodDelivery.Pages.AuthPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Авторизация">
+    <Grid Width="540" Height="540" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="85" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="55" />
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="FoodGo · доставка еды" FontSize="29" FontWeight="Bold"
+                   HorizontalAlignment="Center" VerticalAlignment="Center"
+                   Foreground="{DynamicResource AccentDarkBrush}" />
+        <Grid Grid.Row="1" Width="370" HorizontalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="68" />
+                <RowDefinition Height="68" />
+                <RowDefinition Height="68" />
+                <RowDefinition Height="58" />
+                <RowDefinition Height="58" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <TextBox x:Name="TextBoxLogin" ToolTip="Введите логин" VerticalContentAlignment="Center"
+                         TextChanged="TextBoxLogin_TextChanged" />
+                <TextBlock x:Name="LoginHint" Text="Введите логин" Style="{StaticResource PlaceholderStyle}" />
+            </Grid>
+            <Grid Grid.Row="1">
+                <PasswordBox x:Name="PasswordBox" ToolTip="Введите пароль" VerticalContentAlignment="Center"
+                             PasswordChanged="PasswordBox_PasswordChanged" />
+                <TextBlock x:Name="PasswordHint" Text="Введите пароль" Style="{StaticResource PlaceholderStyle}" />
+            </Grid>
+            <Grid Grid.Row="2" x:Name="CaptchaPanel" Visibility="Collapsed">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="130" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="94" />
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="CaptchaText" Grid.Column="0" IsReadOnly="True" FontSize="21" FontWeight="Bold"
+                         HorizontalContentAlignment="Center" Foreground="{DynamicResource DangerBrush}"
+                         ToolTip="Код капчи. Введите его вручную." CommandManager.PreviewExecuted="textBox_PreviewExecuted" />
+                <TextBox x:Name="CaptchaInput" Grid.Column="1" ToolTip="Введите код капчи" MaxLength="6"
+                         TextChanged="CaptchaInput_TextChanged" />
+                <Button Grid.Column="2" Content="Другой код" FontSize="11" Margin="3,0,0,0"
+                        ToolTip="Сгенерировать новую капчу" Click="CaptchaRefresh_Click" />
+            </Grid>
+            <Button Grid.Row="3" x:Name="ButtonEnter" Content="Войти" ToolTip="Выполнить авторизацию" Click="ButtonEnter_Click" />
+            <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="Регистрация" ToolTip="Создать учётную запись" Click="ButtonReg_Click" />
+                <Button Content="Смена пароля" ToolTip="Изменить пароль учётной записи" Style="{StaticResource SecondaryButton}" Click="ButtonChangePassword_Click" />
+            </StackPanel>
+        </Grid>
+        <TextBlock Grid.Row="2" Text="После трёх неверных попыток потребуется капча" Foreground="{DynamicResource MutedTextBrush}"
+                   HorizontalAlignment="Center" VerticalAlignment="Center" />
+    </Grid>
+</Page>

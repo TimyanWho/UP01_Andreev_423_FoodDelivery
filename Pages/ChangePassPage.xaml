@@ -1,0 +1,28 @@
+<Page x:Class="UP01_Andreev_423_FoodDelivery.Pages.ChangePassPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Смена пароля">
+    <Grid Width="650" Height="470" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70" /><RowDefinition Height="*" /><RowDefinition Height="62" />
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Смена пароля" FontSize="27" FontWeight="Bold" HorizontalAlignment="Center"
+                   VerticalAlignment="Center" Foreground="{DynamicResource AccentDarkBrush}" />
+        <Grid Grid.Row="1" Width="530" HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions><ColumnDefinition Width="220" /><ColumnDefinition Width="*" /></Grid.ColumnDefinitions>
+            <Grid.RowDefinitions><RowDefinition Height="68" /><RowDefinition Height="68" /><RowDefinition Height="68" /><RowDefinition Height="68" /></Grid.RowDefinitions>
+            <Label Grid.Row="0" Content="Логин" VerticalAlignment="Center" />
+            <TextBox Grid.Row="0" Grid.Column="1" x:Name="TbLogin" ToolTip="Логин учётной записи" />
+            <Label Grid.Row="1" Content="Текущий пароль" VerticalAlignment="Center" />
+            <PasswordBox Grid.Row="1" Grid.Column="1" x:Name="CurrentPasswordBox" ToolTip="Подтвердите текущий пароль" />
+            <Label Grid.Row="2" Content="Новый пароль" VerticalAlignment="Center" />
+            <PasswordBox Grid.Row="2" Grid.Column="1" x:Name="NewPasswordBox" ToolTip="Минимум 6 символов, английские буквы и цифра" />
+            <Label Grid.Row="3" Content="Повтор нового пароля" VerticalAlignment="Center" />
+            <PasswordBox Grid.Row="3" Grid.Column="1" x:Name="ConfirmPasswordBox" ToolTip="Повторите новый пароль" />
+        </Grid>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="Сохранить пароль" ToolTip="Проверить и сохранить новый пароль" Click="ButtonSave_Click" />
+            <Button Content="Назад" Style="{StaticResource SecondaryButton}" Click="Back_Click" ToolTip="Вернуться ко входу" />
+        </StackPanel>
+    </Grid>
+</Page>

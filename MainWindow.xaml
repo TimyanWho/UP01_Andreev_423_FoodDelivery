@@ -1,0 +1,41 @@
+<Window x:Class="UP01_Andreev_423_FoodDelivery.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Сервис доставки еды"
+        Width="1200"
+        Height="760"
+        MinWidth="1000"
+        MinHeight="650"
+        WindowStartupLocation="CenterScreen"
+        Loaded="Window_Loaded"
+        Closing="Window_Closing">
+    <Grid Background="{DynamicResource WindowBackground}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="54" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="44" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="{DynamicResource PanelBackground}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="110" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="110" />
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" x:Name="BackButton" Content="Назад" Style="{DynamicResource SecondaryButton}" Click="BackButton_Click" ToolTip="Вернуться на предыдущую страницу" />
+            <TextBlock Grid.Column="1" x:Name="PageTitle" Text="Авторизация" Style="{StaticResource PageTitleStyle}" VerticalAlignment="Center" Margin="12,0" />
+            <TextBlock Grid.Column="2" x:Name="CurrentUserText" VerticalAlignment="Center" HorizontalAlignment="Right" TextAlignment="Right" />
+            <Button Grid.Column="3" Content="Тема" Click="ThemeButton_Click" Style="{StaticResource SecondaryButton}" />
+            <Button Grid.Column="4" x:Name="LogoutButton" Content="Выйти" Click="LogoutButton_Click" Style="{StaticResource DangerButton}" />
+        </Grid>
+
+        <Frame Grid.Row="1" x:Name="MainFrame" NavigationUIVisibility="Hidden" />
+
+        <Grid Grid.Row="2" Background="{DynamicResource PanelBackground}">
+            <TextBlock x:Name="DateTimeNow" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,12,0" />
+        </Grid>
+    </Grid>
+</Window>
